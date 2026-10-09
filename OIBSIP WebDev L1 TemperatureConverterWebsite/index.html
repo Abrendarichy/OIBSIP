@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ThermoConvert - Temperature Converter</title>
+  
+  <!-- Font Awesome Icons CDN -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="converter-card">
+    <header class="card-header">
+      <i class="fa-solid fa-temperature-half header-icon"></i>
+      <h1>ThermoConvert</h1>
+      <p>Real-time Temperature Unit Conversion</p>
+    </header>
+
+    <div class="field-group full-width">
+      <label for="temp-input">
+        <i class="fa-solid fa-calculator"></i> Temperature Value
+      </label>
+      <input 
+        type="number" 
+        id="temp-input" 
+        step="any" 
+        placeholder="e.g. 25" 
+      />
+    </div>
+
+    <div class="input-grid">
+      <div class="field-group">
+        <label for="from-unit">
+          <i class="fa-solid fa-right-from-bracket"></i> From Unit
+        </label>
+        <select id="from-unit">
+          <option value="C">Celsius (°C)</option>
+          <option value="F">Fahrenheit (°F)</option>
+          <option value="K">Kelvin (K)</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label for="to-unit">
+          <i class="fa-solid fa-right-to-bracket"></i> To Unit
+        </label>
+        <select id="to-unit">
+          <option value="F" selected>Fahrenheit (°F)</option>
+          <option value="C">Celsius (°C)</option>
+          <option value="K">Kelvin (K)</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="error-msg" class="error-banner"></div>
+
+    <button type="button" id="convert-btn">
+      <i class="fa-solid fa-arrow-rotate-right"></i> Convert Temperature
+    </button>
+
+    <!-- Output Section -->
+    <section class="results-card" id="results-card">
+      <h2><i class="fa-solid fa-chart-bar"></i> Final Conversion Results</h2>
+      
+      <div class="primary-result-box">
+        <span class="primary-label">Target Result:</span>
+        <span class="primary-val" id="primary-result">--</span>
+      </div>
+
+      <div class="results-grid">
+        <div class="result-box" id="box-celsius">
+          <span class="unit-label"><i class="fa-solid fa-temperature-low"></i> Celsius</span>
+          <span class="unit-val" id="res-celsius">-- °C</span>
+        </div>
+
+        <div class="result-box" id="box-fahrenheit">
+          <span class="unit-label"><i class="fa-solid fa-temperature-high"></i> Fahrenheit</span>
+          <span class="unit-val" id="res-fahrenheit">-- °F</span>
+        </div>
+
+        <div class="result-box" id="box-kelvin">
+          <span class="unit-label"><i class="fa-solid fa-atom"></i> Kelvin</span>
+          <span class="unit-val" id="res-kelvin">-- K</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
